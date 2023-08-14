@@ -29,6 +29,7 @@
 }
 
 .button {
+    color: rgb(255, 255, 255);
     padding: 0.5rem;
     transition: all 0.2s ease-in-out;
     border: none;

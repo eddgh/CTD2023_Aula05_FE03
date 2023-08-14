@@ -1,5 +1,5 @@
-
 import User from './components/User';
+import { useState } from 'react';
 import styles from './App.module.css';
 
 const listaDeUsuarios = [
@@ -42,6 +42,9 @@ const listaDeUsuarios = [
 ]
 
 function App() {
+  const [count, setCount] = useState(0);
+
+
   return (
     <main className={styles.main}>
       <section id="card" className={styles.cardSection}>

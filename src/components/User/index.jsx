@@ -1,16 +1,20 @@
+import { useState } from 'react';
 import styles from './User.module.css';
 
 export default function User({ user }) {
-  let likeAmount = 0;
+  const [likeAmount, setLikeAmount] = useState(0); 
+  
   const updateLikeAmount = (likeOption) => {
     if (likeOption === 'down' && likeAmount - 1 >= 0) {
-      likeAmount--
+      setLikeAmount((likeAmount) => likeAmount - 1)
     }
     if (likeOption === 'up') {
-      likeAmount++
+      setLikeAmount((likeAmount) => likeAmount + 1)
     }
-    console.log(likeAmount);
   }
+  console.log(likeAmount);
+
+
   return (
     <div className={styles.card}>
       <div className={styles.imageContainer}>
@@ -19,7 +23,7 @@ export default function User({ user }) {
         <h3>Oi eu sou {user.userName} e tenho {likeAmount} like{likeAmount > 1 ? 's' : ''} </h3>
       <div className={styles.buttonContainer}>
         <button className={`${styles.button} ${styles.likeButton}`} onClick={() => updateLikeAmount('up')}>Like 👍</button>
-        <button className={`${styles.button} ${styles.dislikeButton}`} onClick={() => updateLikeAmount('down')}>Like 👎</button>
+        <button className={`${styles.button} ${styles.dislikeButton}`} onClick={() => updateLikeAmount('down')}>DisLike 👎</button>
       </div>
     </div>
   )
