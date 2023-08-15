@@ -1,5 +1,4 @@
 import User from './components/User';
-import { useState } from 'react';
 import styles from './App.module.css';
 
 const listaDeUsuarios = [
@@ -42,13 +41,12 @@ const listaDeUsuarios = [
 ]
 
 function App() {
-  const [count, setCount] = useState(0);
-
 
   return (
     <main className={styles.main}>
       <section id="card" className={styles.cardSection}>
         <h2>Usuários</h2>
+
         <div className={styles.cardContainer}>
           {listaDeUsuarios && (
             listaDeUsuarios.map((usuario, index) => {
@@ -57,9 +55,10 @@ function App() {
               )
             })
           )}
-        </div> 
+        </div>
       </section>
     </main>
   )
 }
+
 export default App
